@@ -26,7 +26,52 @@ namespace hw1
             Console.WriteLine("I spent " + dollerAmount.ToString("C") + " on a cheeseburger");
             Console.WriteLine(symbol + " marks the spot");
 
+            //ADVENTURER MODE
 
+            String[] favMovies = new string[] { "The Holiday", "The Switch", "Nemo", "Wall-E" };
+            var ting = new [] { "women", "asian", "foodie", "animal lover"};
+
+            for (int i = 0; i < favMovies.Length; i++)
+            {
+
+                string s = favMovies[i];
+                Console.Write(s + ", ");
+                //if (s.Length - 1)
+                //{
+                //    Console.Write(s + " ");
+                //}
+                //else
+                //{
+                //    Console.Write(s + ", ");
+
+                //}
+
+            }
+
+            Console.WriteLine();
+            for (int i = 0; i < ting.Length; i++)
+            {
+
+                string j = ting[i];
+                Console.WriteLine(j + ", ");
+               
+
+            }
+
+            //EPIC
+            dynamic mymoviearray = new[]
+          {
+               new { title = "The Holiday", genre = "romantic comedy", rating = "10"},
+                 new { title = "The Switch", genre = "romantic comedy", rating = "8"},
+               new { title = "Nemo", genre = "animation", rating = "9"},
+                              new { title = "Wall-E", genre = "animation", rating = "10"},
+
+              };
+
+            Console.WriteLine("I love this movie called " + mymoviearray[0].title + ", it is a " + mymoviearray[0].genre + " I give it a rating of " + mymoviearray[0].rating + ".") ;
+            Console.WriteLine("I love this movie called " + mymoviearray[1].title + ", it is a " + mymoviearray[1].genre + " I give it a rating of " + mymoviearray[1].rating + ".") ;
+            Console.WriteLine("I love this movie called " + mymoviearray[2].title + ", it is a " + mymoviearray[2].genre + " I give it a rating of " + mymoviearray[2].rating + ".");
+            Console.WriteLine("I love this movie called " + mymoviearray[3].title + ", it is a " + mymoviearray[3].genre + " I give it a rating of " + mymoviearray[3].rating + ".") ;
 
 
             Console.ReadLine();
