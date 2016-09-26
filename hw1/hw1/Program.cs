@@ -21,9 +21,9 @@ namespace hw1
 
             Console.WriteLine(myHello);
             Console.WriteLine("Columbus Sailed the world in " + myNumber);
-            Console.WriteLine(dogState + " " + doIHaveADog.ToLowerString() + " " + dogState2);
+            Console.WriteLine(dogState + " " + doIHaveADog.ToString().ToLower() + " " + dogState2);
             Console.WriteLine("Today is " + myDate.ToString("d"));
-            Console.WriteLine("I spent " + "$" + dollerAmount + " on a cheeseburger");
+            Console.WriteLine("I spent " + dollerAmount.ToString("C") + " on a cheeseburger");
             Console.WriteLine(symbol + " marks the spot");
 
 
