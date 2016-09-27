@@ -17,7 +17,7 @@ namespace hw1
             string dogState2 = "that I have a dog at home";
             DateTime myDate = DateTime.Today;
             double dollerAmount = 5.45;
-            string symbol = "X";
+            char symbol = ('X');
 
             Console.WriteLine(myHello);
             Console.WriteLine("Columbus Sailed the world in " + myNumber);
@@ -33,18 +33,22 @@ namespace hw1
 
             for (int i = 0; i < favMovies.Length; i++)
             {
-
+                
                 string s = favMovies[i];
-                Console.Write(s + ", ");
-                //if (s.Length - 1)
-                //{
-                //    Console.Write(s + " ");
-                //}
-                //else
-                //{
-                //    Console.Write(s + ", ");
+              
+                if (i == favMovies.Length - 1)
 
-                //}
+                {
+                    Console.Write(s);
+                }
+                else
+                {
+                    Console.Write(s + ", ");
+
+                }
+
+
+
 
             }
 
