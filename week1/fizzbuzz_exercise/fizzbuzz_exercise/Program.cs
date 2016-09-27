@@ -58,37 +58,65 @@ namespace fizzbuzz_exercise
                 Console.WriteLine("you didn't enter a number");
 
             }
-            for (int i = 0; i < newNum; ++i)
+            else
             {
-                if (i <= 0)
+                for (int i = newNum; i > 0; i--)
                 {
-                    Console.WriteLine("0");
+                    if (i <= 0)
+                    {
+                        Console.WriteLine("0");
+                    }
+                    else if (i % 5 == 0 && i % 3 == 0)
+                    {
+                        Console.WriteLine("FuzzBuzz");
+                    }
+                    else if (i % 3 == 0)
+                    {
+                        Console.WriteLine("Fizz");
+                    }
+                    else if (i % 5 == 0)
+                    {
+                        Console.WriteLine("Buzz");
+                    }
+
+                    else
+                    {
+                        Console.WriteLine(i);
+                    }
                 }
-                else if (i % 5 == 0 && i % 3 == 0)
-                {
-                    Console.WriteLine("FuzzBuzz");
-                }
-
-                else if (i % 3 == 0)
-                {
-                    Console.WriteLine("Fizz");
-                }
-                else if (i % 5 == 0)
-                {
-                    Console.WriteLine("Buzz");
-                }
-
-                else
-                {
-                    Console.WriteLine(i);
-                }
-
-
-
-                Console.Read();
-
             }
+
+            //for (int i = 0; i < newNum; ++i)
+            //{
+            //    if (i <= 0)
+            //    {
+            //        Console.WriteLine("0");
+            //    }
+            //    else if (i % 5 == 0 && i % 3 == 0)
+            //    {
+            //        Console.WriteLine("FuzzBuzz");
+            //    }
+
+            //    else if (i % 3 == 0)
+            //    {
+            //        Console.WriteLine("Fizz");
+            //    }
+            //    else if (i % 5 == 0)
+            //    {
+            //        Console.WriteLine("Buzz");
+            //    }
+
+            //    else
+            //    {
+            //        Console.WriteLine(i);
+            //    }
+
+
+
+            Console.Read();
+
         }
     }
-
 }
+
+
