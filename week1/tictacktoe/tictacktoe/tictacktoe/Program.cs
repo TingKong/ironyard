@@ -27,8 +27,8 @@ namespace tictacktoe
 
             
          
-            char player1 = 'X';
-            char player2 = 'O';
+            char cross = 'X';
+            char circle = 'O';
 
             int[] myArray = new int[9];
             for (int i = 0; i < myArray.Length; i++)
@@ -37,29 +37,34 @@ namespace tictacktoe
 
             }
 
-            WriteGridLine1(string.Format(" {0} | {1} | {2} ", i, i, i));
-            Console.WriteLine("____________");
-            WriteGridLine1(string.Format(" {0} | {1} | {2} ", i, i, i));
-            Console.WriteLine("____________");
-            WriteGridLine1(string.Format(" {0} | {1} | {2} ", i, i, i));
+            Grid( myArray);
 
 
+/***converting input into the location***/
+            Console.WriteLine("Select a number");
+            string player1 = Console.ReadLine();
 
+            if (player1 == "1")
+            {
+                int a = 1;
+                Int32.TryParse(player1, out a);
+                myArray[1] == cross;
 
-          
+            }
 
 
 
             Console.ReadLine();
 
-
-
         }
-        static string WriteGridLine1(string lines)
+        static void Grid(int[] myArray)
         {
-            Console.WriteLine(lines);
-            return lines;
-           
+            Console.WriteLine(string.Format(" {0} | {1} | {2} ", myArray[0], myArray[1], myArray[2]));
+            Console.WriteLine("____________");
+            Console.WriteLine(string.Format(" {0} | {1} | {2} ", myArray[3], myArray[4], myArray[5]));
+            Console.WriteLine("____________");
+            Console.WriteLine(string.Format(" {0} | {1} | {2} ", myArray[6], myArray[7], myArray[8]));
+
         }
 
 
