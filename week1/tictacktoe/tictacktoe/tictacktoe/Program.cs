@@ -31,6 +31,9 @@ namespace tictacktoe
 
             char cross = 'X';
             char circle = 'O';
+            bool myBool;
+            bool myBool2;
+
 
             string[] myArray = new string[9];
             for (int i = 0; i < myArray.Length; i++)
@@ -42,17 +45,39 @@ namespace tictacktoe
             Grid(myArray);
 
 
-
+         
             do
             {
                 FirstPlayer(myArray, cross);
-                checker(myArray, cross);
+                myBool = checker(myArray, cross);
+                if (myBool == false)
+                {
+                    break;
+                }
+                myBool2 = tied(myArray);
+                if (myBool2)
+                {
+                    break;
+                }
                 SecondPlayer(myArray, circle);
+                myBool = checker(myArray, cross);
+                if (myBool == false)
+                {
+                    break;
+                }
+                myBool2 = tied(myArray);
+                if (myBool2)
+                {
+                    break;
+                }
+
+
             }
-            while (checker(myArray, cross));
-         
-           
-           
+            while (myBool);
+
+
+
+
 
 
             Console.ReadLine();
@@ -77,9 +102,16 @@ namespace tictacktoe
         {
             Console.WriteLine("Player 1 Select a number");
             string player1 = Console.ReadLine();
+
+            if (player1 == "O")
+            {
+
+                Console.WriteLine("This spot is already taken, please pick another spot");
+            }
+
             int a;
             Int32.TryParse(player1, out a);
-           
+
             
 
             while (a > 8)
@@ -88,10 +120,10 @@ namespace tictacktoe
                 Console.WriteLine("The number you selected must be less than 8");
                 Console.WriteLine("Player 1 Select a number");
                 player1 = Console.ReadLine();
-               
+
                 Int32.TryParse(player1, out a);
-               
-                
+
+
 
 
 
@@ -100,12 +132,13 @@ namespace tictacktoe
                 Console.WriteLine("The number you selected must be greater than 0");
                 Console.WriteLine("Player 1 Select a number");
                 player1 = Console.ReadLine();
-               
+
                 Int32.TryParse(player1, out a);
-                
+
 
 
             }
+          
 
             myArray2[a] = gamepiece.ToString();
             Grid(myArray2);
@@ -116,12 +149,21 @@ namespace tictacktoe
 
         static void SecondPlayer(string[] myArray3, char gamepiece2)
         {
-         
+
             Console.WriteLine("Player 2 Select a number");
             string player2 = Console.ReadLine();
+            //if (player2 == myArray3[i] && )
+            //{
+
+            //    Console.WriteLine("This spot is already taken, please pick another spot");
+            //    player2 = Console.ReadLine();
+            //}
+
             int b;
             Int32.TryParse(player2, out b);
 
+
+          
             while (b > 8)
 
             {
@@ -146,12 +188,12 @@ namespace tictacktoe
 
 
             }
-
+            
 
 
             myArray3[b] = gamepiece2.ToString();
             Grid(myArray3);
-           
+
 
 
         }
@@ -159,12 +201,13 @@ namespace tictacktoe
         /***check for a winner***/
         static bool checker(string[] myArray4, char gamepiece3)
         {
-        
+
             if (myArray4[0] == myArray4[1] && myArray4[1] == myArray4[2])
             {
                 if (myArray4[0] == gamepiece3.ToString())
                 {
                     Console.WriteLine("Player 1 you won!");
+
                 }
                 else
                 {
@@ -172,7 +215,8 @@ namespace tictacktoe
 
                 }
 
-                return true;
+                return false;
+
             }
             else if (myArray4[3] == myArray4[4] && myArray4[4] == myArray4[5])
             {
@@ -185,7 +229,7 @@ namespace tictacktoe
                     Console.WriteLine("Player 2 you won!");
 
                 }
-                return true;
+                return false;
             }
             else if (myArray4[6] == myArray4[7] && myArray4[7] == myArray4[8])
             {
@@ -198,7 +242,7 @@ namespace tictacktoe
                     Console.WriteLine("Player 2 you won!");
 
                 }
-                return true;
+                return false;
             }
             else if (myArray4[0] == myArray4[3] && myArray4[3] == myArray4[6])
             {
@@ -211,7 +255,7 @@ namespace tictacktoe
                     Console.WriteLine("Player 2 you won!");
 
                 }
-                return true;
+                return false;
             }
             else if (myArray4[1] == myArray4[4] && myArray4[4] == myArray4[7])
             {
@@ -224,7 +268,7 @@ namespace tictacktoe
                     Console.WriteLine("Player 2 you won!");
 
                 }
-                return true;
+                return false;
             }
             else if (myArray4[2] == myArray4[5] && myArray4[5] == myArray4[8])
             {
@@ -237,7 +281,7 @@ namespace tictacktoe
                     Console.WriteLine("Player 2 you won!");
 
                 }
-                return true;
+                return false;
             }
             else if (myArray4[0] == myArray4[4] && myArray4[4] == myArray4[8])
             {
@@ -250,7 +294,7 @@ namespace tictacktoe
                     Console.WriteLine("Player 2 you won!");
 
                 }
-                return true;
+                return false;
             }
             else if (myArray4[2] == myArray4[4] && myArray4[4] == myArray4[6])
             {
@@ -263,14 +307,35 @@ namespace tictacktoe
                     Console.WriteLine("Player 2 you won!");
 
                 }
-                return true;
-            } else
-            {
-                Console.WriteLine("You tied");
+
                 return false;
             }
 
 
+            return true;
         }
+
+        static bool tied(string[] myArray5)
+        {
+
+       
+                for (int i = 0; i < myArray5.Length; i++)
+                {
+                  if(myArray5[i] != "X" && myArray5[i] != "O")
+                    {
+                   
+                        return false;
+                    }
+                 
+                   
+                }
+
+
+            Console.WriteLine("You have a tie!");
+            return true;
+
+        }
+
+       
     }
 }
