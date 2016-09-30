@@ -103,16 +103,8 @@ namespace tictacktoe
             Console.WriteLine("Player 1 Select a number");
             string player1 = Console.ReadLine();
 
-            if (player1 == "O")
-            {
-
-                Console.WriteLine("This spot is already taken, please pick another spot");
-            }
-
             int a;
             Int32.TryParse(player1, out a);
-
-            
 
             while (a > 8)
 
@@ -123,10 +115,6 @@ namespace tictacktoe
 
                 Int32.TryParse(player1, out a);
 
-
-
-
-
             } while (a < 0)
             {
                 Console.WriteLine("The number you selected must be greater than 0");
@@ -135,10 +123,16 @@ namespace tictacktoe
 
                 Int32.TryParse(player1, out a);
 
-
-
             }
-          
+
+            while (myArray2[a].ToString() == "O")
+            {
+                Console.WriteLine("This spot is already taken, please pick another spot");
+                Console.WriteLine("Player 1 select another number");
+                player1 = Console.ReadLine();
+                Int32.TryParse(player1, out a);
+            }
+
 
             myArray2[a] = gamepiece.ToString();
             Grid(myArray2);
@@ -152,12 +146,7 @@ namespace tictacktoe
 
             Console.WriteLine("Player 2 Select a number");
             string player2 = Console.ReadLine();
-            //if (player2 == myArray3[i] && )
-            //{
-
-            //    Console.WriteLine("This spot is already taken, please pick another spot");
-            //    player2 = Console.ReadLine();
-            //}
+       
 
             int b;
             Int32.TryParse(player2, out b);
@@ -188,8 +177,14 @@ namespace tictacktoe
 
 
             }
-            
 
+            while (myArray3[b].ToString() == "X")
+            {
+                Console.WriteLine("This spot is already taken, please pick another spot");
+                Console.WriteLine("Player 2 select another number");
+                player2 = Console.ReadLine();
+                Int32.TryParse(player2, out b);
+            }
 
             myArray3[b] = gamepiece2.ToString();
             Grid(myArray3);
