@@ -31,52 +31,47 @@ namespace tictacktoe
 
             char cross = 'X';
             char circle = 'O';
-            bool myBool;
-            bool myBool2;
+            bool boolOptionToPlay = true;
 
 
             string[] myArray = new string[9];
-            for (int i = 0; i < myArray.Length; i++)
-            {
-                myArray[i] = i.ToString();
 
-            }
-
+            NumberInGrid(myArray);
             Grid(myArray);
 
-
-         
-            do
+            while (boolOptionToPlay)
             {
-                FirstPlayer(myArray, cross);
-                myBool = checker(myArray, cross);
-                if (myBool == false)
+                do
                 {
-                    break;
-                }
-                myBool2 = tied(myArray);
-                if (myBool2)
-                {
-                    break;
-                }
-                SecondPlayer(myArray, circle);
-                myBool = checker(myArray, cross);
-                if (myBool == false)
-                {
-                    break;
-                }
-                myBool2 = tied(myArray);
-                if (myBool2)
-                {
-                    break;
-                }
 
+                    FirstPlayer(myArray, cross);
+                    if (!checker(myArray, cross))
+                    {
+                        boolOptionToPlay = PlayAgain(myArray);
+                        break;
+                    }
+
+                    if (tied(myArray))
+                    {
+                        boolOptionToPlay = PlayAgain(myArray);
+                        break;
+                    }
+
+                    SecondPlayer(myArray, circle);
+                    if (!checker(myArray, cross))
+                    {
+                        boolOptionToPlay = PlayAgain(myArray);
+                        break;
+                    }
+                    if (tied(myArray))
+                    {
+                        boolOptionToPlay = PlayAgain(myArray);
+                        break;
+                    }
+
+                } while (checker(myArray, cross));
 
             }
-            while (myBool);
-
-
-
 
 
 
@@ -84,6 +79,14 @@ namespace tictacktoe
 
         }
         /***grid***/
+        static void NumberInGrid(string[] myArray1) {
+
+            for (int i = 0; i < myArray1.Length; i++)
+            {
+                myArray1[i] = i.ToString();
+
+            }
+        }
 
         static void Grid(string[] myArray)
         {
@@ -125,7 +128,7 @@ namespace tictacktoe
 
             }
 
-            while (myArray2[a].ToString() == "O")
+            while (myArray2[a].ToString() == "O" && myArray2[a].ToString() == "X")
             {
                 Console.WriteLine("This spot is already taken, please pick another spot");
                 Console.WriteLine("Player 1 select another number");
@@ -133,12 +136,10 @@ namespace tictacktoe
                 Int32.TryParse(player1, out a);
             }
 
-
             myArray2[a] = gamepiece.ToString();
             Grid(myArray2);
-
-
         }
+
         /***converting input into the location***/
 
         static void SecondPlayer(string[] myArray3, char gamepiece2)
@@ -178,7 +179,7 @@ namespace tictacktoe
 
             }
 
-            while (myArray3[b].ToString() == "X")
+            while (myArray3[b].ToString() == "X" && myArray3[b].ToString() == "O")
             {
                 Console.WriteLine("This spot is already taken, please pick another spot");
                 Console.WriteLine("Player 2 select another number");
@@ -296,12 +297,14 @@ namespace tictacktoe
                 if (myArray4[6] == gamepiece3.ToString())
                 {
                     Console.WriteLine("Player 1 you won!");
+
                 }
                 else
                 {
                     Console.WriteLine("Player 2 you won!");
 
                 }
+
 
                 return false;
             }
@@ -331,6 +334,33 @@ namespace tictacktoe
 
         }
 
-       
+        static bool PlayAgain(string[] myArray6)
+        {
+
+            Console.WriteLine("Play Again Y|N");
+            string playAnswer = Console.ReadLine().ToUpper();
+            if (playAnswer == "Y")
+            {
+                Console.Clear();
+                NumberInGrid(myArray6);
+                Grid(myArray6);
+                return true;
+                
+            } else if (playAnswer == "N")
+            {
+                Console.WriteLine("Thank you for playing");
+                return false;
+            }
+            else
+            {
+                Console.WriteLine("Incorrect input, Please enter a Y|N");
+                return false;
+            }
+
+        }
+
+
+
+
     }
 }
