@@ -177,52 +177,62 @@ namespace tictacktoe
 
 
             int b;
-            while(!Int32.TryParse(player2, out b))
+
+            bool infoCorrect = false;
+            while (!infoCorrect)
             {
-                Console.WriteLine("you didn't enter a number");
-                Console.WriteLine("please enter a number");
-                player2 = Console.ReadLine();
-                Int32.TryParse(player2, out b);
+                if (!Int32.TryParse(player2, out b))
+                {
+                    Console.WriteLine("you didn't enter a number");
+                    Console.WriteLine("please enter a number");
+                    player2 = Console.ReadLine();
+                    Int32.TryParse(player2, out b);
+                    infoCorrect = false;
+
+
+                }
+                else if (b > 8)
+
+                {
+                    Console.WriteLine("The number you selected must be less than 8");
+                    Console.WriteLine("Player 1 Select a number");
+                    player2 = Console.ReadLine();
+                    Int32.TryParse(player2, out b);
+                    infoCorrect = false;
+
+
+                }
+                else if (b < 0)
+                {
+                    Console.WriteLine("The number you selected must be greater than 0");
+                    Console.WriteLine("Player 1 Select a number");
+                    player2 = Console.ReadLine();
+                    Int32.TryParse(player2, out b);
+                    infoCorrect = false;
+
+
+                }
+
+                else if (myArray3[b].ToString() == "O" || myArray3[b].ToString() == "X")
+                {
+                    Console.WriteLine("This spot is already taken, please pick another spot");
+                    Console.WriteLine("Player 1 select another number");
+                    player2 = Console.ReadLine();
+                    Int32.TryParse(player2, out b);
+                    infoCorrect = false;
+
+                }
+                else
+                {
+                    myArray3[b] = gamepiece2.ToString();
+                    Grid(myArray3);
+                    infoCorrect = true;
+                }
+
 
             }
 
 
-
-            while (b > 8)
-
-            {
-                Console.WriteLine("The number you selected must be less than 8");
-                Console.WriteLine("Player 2 Select a number");
-                player2 = Console.ReadLine();
-
-                Int32.TryParse(player2, out b);
-
-
-
-
-
-            } while (b < 0)
-            {
-                Console.WriteLine("The number you selected must be greater than 0");
-                Console.WriteLine("Player 2 Select a number");
-                player2 = Console.ReadLine();
-
-                Int32.TryParse(player2, out b);
-
-
-
-            }
-
-            while (myArray3[b].ToString() == "X" || myArray3[b].ToString() == "O")
-            {
-                Console.WriteLine("This spot is already taken, please pick another spot");
-                Console.WriteLine("Player 2 select another number");
-                player2 = Console.ReadLine();
-                Int32.TryParse(player2, out b);
-            }
-
-            myArray3[b] = gamepiece2.ToString();
-            Grid(myArray3);
 
         }
 
