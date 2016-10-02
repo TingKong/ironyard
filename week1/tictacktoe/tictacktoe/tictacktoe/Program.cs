@@ -34,6 +34,7 @@ namespace tictacktoe
             bool boolOptionToPlay = true;
 
 
+
             string[] myArray = new string[9];
 
             NumberInGrid(myArray);
@@ -107,37 +108,63 @@ namespace tictacktoe
             string player1 = Console.ReadLine();
 
             int a;
-            Int32.TryParse(player1, out a);
 
-            while (a > 8)
-
+            bool infoCorrect = false;
+            while (!infoCorrect)
             {
-                Console.WriteLine("The number you selected must be less than 8");
-                Console.WriteLine("Player 1 Select a number");
-                player1 = Console.ReadLine();
+                if (!Int32.TryParse(player1, out a))
+                {
+                    Console.WriteLine("you didn't enter a number");
+                    Console.WriteLine("please enter a number");
+                    player1 = Console.ReadLine();
+                    Int32.TryParse(player1, out a);
+                    infoCorrect = false;
 
-                Int32.TryParse(player1, out a);
 
-            } while (a < 0)
-            {
-                Console.WriteLine("The number you selected must be greater than 0");
-                Console.WriteLine("Player 1 Select a number");
-                player1 = Console.ReadLine();
+                }
+               else  if (a > 8)
 
-                Int32.TryParse(player1, out a);
+                {
+                    Console.WriteLine("The number you selected must be less than 8");
+                    Console.WriteLine("Player 1 Select a number");
+                    player1 = Console.ReadLine();
+                    Int32.TryParse(player1, out a);
+                    infoCorrect = false;
+
+
+                }
+                else if (a < 0)
+                {
+                    Console.WriteLine("The number you selected must be greater than 0");
+                    Console.WriteLine("Player 1 Select a number");
+                    player1 = Console.ReadLine();
+                    Int32.TryParse(player1, out a);
+                    infoCorrect = false;
+
+
+                }
+
+                else if (myArray2[a].ToString() == "O" || myArray2[a].ToString() == "X")
+                {
+                    Console.WriteLine("This spot is already taken, please pick another spot");
+                    Console.WriteLine("Player 1 select another number");
+                    player1 = Console.ReadLine();
+                    Int32.TryParse(player1, out a);
+                    infoCorrect = false;
+
+                }
+                else
+                {
+                    myArray2[a] = gamepiece.ToString();
+                    Grid(myArray2);
+                    infoCorrect = true;
+                }
+
 
             }
+           
 
-            while (myArray2[a].ToString() == "O" && myArray2[a].ToString() == "X")
-            {
-                Console.WriteLine("This spot is already taken, please pick another spot");
-                Console.WriteLine("Player 1 select another number");
-                player1 = Console.ReadLine();
-                Int32.TryParse(player1, out a);
-            }
 
-            myArray2[a] = gamepiece.ToString();
-            Grid(myArray2);
         }
 
         /***converting input into the location***/
@@ -147,13 +174,20 @@ namespace tictacktoe
 
             Console.WriteLine("Player 2 Select a number");
             string player2 = Console.ReadLine();
-       
+
 
             int b;
-            Int32.TryParse(player2, out b);
+            while(!Int32.TryParse(player2, out b))
+            {
+                Console.WriteLine("you didn't enter a number");
+                Console.WriteLine("please enter a number");
+                player2 = Console.ReadLine();
+                Int32.TryParse(player2, out b);
+
+            }
 
 
-          
+
             while (b > 8)
 
             {
@@ -179,7 +213,7 @@ namespace tictacktoe
 
             }
 
-            while (myArray3[b].ToString() == "X" && myArray3[b].ToString() == "O")
+            while (myArray3[b].ToString() == "X" || myArray3[b].ToString() == "O")
             {
                 Console.WriteLine("This spot is already taken, please pick another spot");
                 Console.WriteLine("Player 2 select another number");
@@ -189,8 +223,6 @@ namespace tictacktoe
 
             myArray3[b] = gamepiece2.ToString();
             Grid(myArray3);
-
-
 
         }
 
@@ -358,6 +390,9 @@ namespace tictacktoe
             }
 
         }
+
+
+
 
 
 
