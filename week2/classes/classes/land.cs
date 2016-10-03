@@ -8,9 +8,8 @@ namespace classes
 {
     class Land
     {
-        private bool  disneyWorld;
+        private bool  disneyWorld = true;
         private bool  humans;
-        private bool pollution;
         private int spaceStations;
         private int godzilla;
         private string nameGodzilla;
@@ -21,9 +20,10 @@ namespace classes
 
         }
 
-        public Land(int initialGodzilla)
+        public Land(int initialGodzilla, int InitialspaceStation)
         {
             Godzilla = initialGodzilla;
+            SpaceStations = InitialspaceStation;
         }
 
         public bool DisneyWorld
@@ -52,15 +52,7 @@ namespace classes
             }
         }
 
-        public bool Pollution
 
-        {
-            get
-            {
-                return pollution;
-            }
-            
-        }
 
         public string NameGodzilla
 

@@ -8,7 +8,7 @@ namespace classes
 {
     class Sky
     {
-        private bool clouds;
+        private bool clouds = true;
         private bool aliens;
         private int flyingCars;
         private int airplanes;
@@ -19,9 +19,9 @@ namespace classes
             flyingNakedHumans = initialFlyingNakedHumans;
         }
 
-        public Sky(int initialFlyingNakedHumans, int initialFlyingCars)
+        public Sky(int initialAirPlanes, int initialFlyingCars)
         {
-            FlyingNakedHumans = initialFlyingNakedHumans;
+            Airplanes = initialAirPlanes;
             FlyingCars = initialFlyingCars;
         }
 
@@ -91,18 +91,18 @@ namespace classes
         {
             get
             {
-                return FlyingNakedHumans;
+                return flyingNakedHumans;
             }
 
             set
             {
                 if (value < 1)
                 {
-                    FlyingNakedHumans = 1;
+                    flyingNakedHumans = 1;
                 }
                 else
                 {
-                    FlyingNakedHumans = value;
+                    flyingNakedHumans = value;
                 }
             }
         }

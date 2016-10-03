@@ -11,7 +11,6 @@ namespace classes
 
         private bool megalodons = true;
         private int warShips;
-        private bool pollution;
         private int giantOctopus;
         private bool sinkenShips;
         private string nemo;
@@ -21,13 +20,14 @@ namespace classes
             nemo = nemoName;
         }
 
-        public Ocean(int initialGaintOctopus)
+        public Ocean(int initialGaintOctopus, int initialWarShips )
         {
             giantOctopus = initialGaintOctopus;
+            warShips = initialWarShips;
+
         }
 
         public bool Megalodons
-
         {
             get
             {
@@ -59,14 +59,7 @@ namespace classes
             }
         }
 
-        public bool Pollution
-
-        {
-            get
-            {
-                return pollution;
-            }
-        }
+      
 
         public int GiantOctopus
         {
