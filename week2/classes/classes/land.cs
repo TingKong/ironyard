@@ -6,13 +6,25 @@ using System.Threading.Tasks;
 
 namespace classes
 {
-    class land
+    class Land
     {
         private bool  disneyWorld;
         private bool  humans;
         private bool pollution;
         private int spaceStations;
         private int godzilla;
+        private string nameGodzilla;
+
+        public Land(string newGodzillaName)
+        {
+            nameGodzilla = newGodzillaName;
+
+        }
+
+        public Land(int initialGodzilla)
+        {
+            Godzilla = initialGodzilla;
+        }
 
         public bool DisneyWorld
 
@@ -50,6 +62,22 @@ namespace classes
             
         }
 
+        public string NameGodzilla
+
+        {
+            get
+            {
+                return nameGodzilla;
+            }
+            set
+            {
+                nameGodzilla = value;
+
+            }
+
+        }
+
+
         public int SpaceStations
         {
             get
@@ -85,7 +113,7 @@ namespace classes
                 }
                 else
                 {
-                    godzilla; = value;
+                    godzilla = value;
                 }
             }
         }

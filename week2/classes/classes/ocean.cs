@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace classes
 {
-    class ocean
+    class Ocean
     {
 
         private bool megalodons = true;
@@ -14,8 +14,17 @@ namespace classes
         private bool pollution;
         private int giantOctopus;
         private bool sinkenShips;
+        private string nemo;
 
+        public Ocean(string nemoName)
+        {
+            nemo = nemoName;
+        }
 
+        public Ocean(int initialGaintOctopus)
+        {
+            giantOctopus = initialGaintOctopus;
+        }
 
         public bool Megalodons
 
@@ -92,5 +101,17 @@ namespace classes
             }
         }
 
+        public string Nemo
+
+        {
+            get
+            {
+                return nemo;
+            }
+            set
+            {
+                nemo = value;
+            }
+        }
     }
 }
