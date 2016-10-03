@@ -15,10 +15,6 @@ namespace classes
             myOcean.SinkenShips = true;
             Ocean myNemo = new Ocean("Bubbles");
 
-           
-
-            Ocean newOcean = new Ocean("bloat");
-            newOcean.Megalodons = false;
             Console.WriteLine();
             Console.WriteLine();
             Console.WriteLine("/********OCEAN********/");
