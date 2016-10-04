@@ -24,13 +24,16 @@ namespace Zoo
             }
         }
 
-  public int Slides
+        public int Slides
         {
             get
             {
                 return slides;
             }
-
+            set
+            {
+                slides = value;
+            }
         }
 
     }

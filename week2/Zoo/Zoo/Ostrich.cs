@@ -13,12 +13,14 @@ namespace Zoo
 
         public Ostrich()
         {
-            base.Flys = false;
-            base.Toes = 4;
-        }
+            base.Flys = false;        }
 
         public bool ScaredEasily
         {
+            get
+            {
+                return scaredEasily;
+            }
             set
             {
                 scaredEasily = value;
@@ -27,6 +29,11 @@ namespace Zoo
 
         public int Eggs
         {
+            get
+            {
+
+                return eggs;
+            }
             set
             {
                 eggs = value;

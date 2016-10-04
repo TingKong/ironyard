@@ -38,12 +38,47 @@ namespace Zoo
             Console.WriteLine();
 
             Owl myBird = new Owl();
-            Console.WriteLine("The beautiful owl lives on" + myBird.Location + " and they have" + myBird.NumOfLegs + " legs.");
-            Console.WriteLine("It is " + myBird.Nocturnal.ToString().ToLower());
+            myBird.Toes = 4;
+            myBird.Food = "small animals";
+            Console.WriteLine("The beautiful owl lives on " + myBird.Location + " and they have " + myBird.NumOfLegs + " legs.");
+            Console.WriteLine("It is " + myBird.Nocturnal.ToString().ToLower() + " owls are nocturnal");
+            Console.WriteLine("Owls have " + myBird.Toes + " toes, and it is " + myBird.Flys.ToString().ToLower() + " owls fly.");
+            Console.WriteLine("For food Owls love to eat " + myBird.Food + ".");
+            Console.WriteLine();
 
             Ostrich myBird2 = new Ostrich();
+            myBird2.Toes = 4;
+            myBird2.Eggs = 2;
+            Console.WriteLine("Ostriches live on " + myBird2.Location + " and they have " + myBird.NumOfLegs + " legs.");
+            Console.WriteLine("Ostriches have " + myBird2.Toes + " toes, and it is " + myBird2.Flys.ToString().ToLower() + " ostriches cannot fly.");
+            Console.WriteLine("Do ostriches scare easy? " + myBird2.ScaredEasily);
+            Console.WriteLine("At one time ostriches can lay " + myBird2.Eggs + ".");
+            Console.WriteLine();
+
 
             Penguins myFish = new Penguins();
+            myFish.Slides = 10;
+            Console.WriteLine("Pengruins live on " + myFish.Location + " and they have " + myFish.NumOfLegs + " legs.");
+            Console.WriteLine("Do Penguins have gills? " + myFish.Gills );
+            Console.WriteLine("Do Penguins live in water? " + myFish.LivesInWater);
+            Console.WriteLine("Do Penguins mate for life? " + myFish.MatesForLife);
+            Console.WriteLine("Penguins typically slide " + myFish.Slides + "times a day");
+            Console.WriteLine();
+
+            Sharks myFish2 = new Sharks();
+            myFish2.Teeth = 20;
+            myFish2.Weight = 1000;
+            Console.WriteLine("Pengruins live on " + myFish2.Location + " and they have " + myFish2.NumOfLegs + " legs.");
+            Console.WriteLine("Do Penguins have gills? " + myFish2.Gills);
+            Console.WriteLine("Do Penguins live in water? " + myFish2.LivesInWater);
+            Console.WriteLine("Sharks typically have " + myFish2.Teeth + " sharp tooth");
+            Console.WriteLine("Sharks typically weigh " + myFish2.Weight + " pounds.")
+
+
+
+
+
+
             Sharks myFish2 = new Sharks();
 
             Console.ReadLine();

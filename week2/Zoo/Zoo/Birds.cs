@@ -8,18 +8,22 @@ namespace Zoo
 {
     public class Birds : Animals
     {
-        private bool flys;
+        private bool flys = true;
         private int toes;
 
 
         public Birds()
         {
             base.NumOfLegs = 2;
-            base.Location = "Land/Sky";
+            base.Location = "mostly land";
         }
 
         public bool Flys
         {
+            get
+            {
+                return flys;
+            }
             set
             {
                flys = value;
@@ -28,7 +32,12 @@ namespace Zoo
 
         public int Toes
         {
-           set
+            
+           get
+            {
+                return toes;
+            }
+            set
             {
                 toes = value;
             }

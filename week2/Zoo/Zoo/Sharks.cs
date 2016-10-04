@@ -23,7 +23,21 @@ namespace Zoo
             {
                 return teeth;
             }
-
+            set
+            {
+                teeth = value;
+            }
+        }
+        public int Weight
+        {
+            get
+            {
+                return weight;
+            }
+            set
+            {
+                weight = value;
+            }
         }
 
     }

@@ -8,7 +8,7 @@ namespace Zoo
 {
     public class Owl : Birds
     {
-        private bool nocturnal;
+        private bool nocturnal = true;
         private string food;
 
         public Owl()
