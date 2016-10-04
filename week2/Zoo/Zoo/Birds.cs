@@ -15,7 +15,7 @@ namespace Zoo
         public Birds()
         {
             base.NumOfLegs = 2;
-            base.Location = "mostly land";
+            base.Location = "land";
         }
 
         public bool Flys

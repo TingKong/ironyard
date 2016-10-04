@@ -15,6 +15,8 @@ namespace Zoo
         {
             base.LivesInWater = true;
             base.Gills = true;
+            base.Location = "sea";
+
         }
 
         public int Teeth

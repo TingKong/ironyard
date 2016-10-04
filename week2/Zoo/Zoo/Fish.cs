@@ -15,7 +15,6 @@ namespace Zoo
     public Fish()
     {
         base.NumOfLegs = 2;
-        base.Location = "land/sea";
     }
 
         public bool LivesInWater

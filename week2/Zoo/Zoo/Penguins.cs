@@ -9,18 +9,20 @@ namespace Zoo
     public class Penguins : Fish
     {
         private int slides;
-        private bool matesForLife;
+        private bool matesForLife = true;
 
         public Penguins()
         {
             base.LivesInWater = false;
             base.Gills = false;
+            base.Location = "land/sea";
+
         }
         public bool MatesForLife
         {
             get
             {
-                return MatesForLife;
+                return matesForLife;
             }
         }
 

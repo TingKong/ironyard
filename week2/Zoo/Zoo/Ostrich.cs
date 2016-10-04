@@ -8,7 +8,7 @@ namespace Zoo
 {
     public class Ostrich : Birds
     {
-        private bool scaredEasily;
+        private bool scaredEasily = true;
         private int eggs;
 
         public Ostrich()
