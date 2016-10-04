@@ -20,6 +20,10 @@ namespace Zoo
 
         public bool Nocturnal
         {
+            get
+            {
+                return nocturnal;
+            }
             set
             {
                 nocturnal = value;
@@ -29,6 +33,10 @@ namespace Zoo
 
         public string Food
         {
+            get
+            {
+                return food;
+            }
             set
             {
                 food = value;

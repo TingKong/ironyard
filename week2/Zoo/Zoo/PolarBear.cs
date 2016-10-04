@@ -9,7 +9,7 @@ namespace Zoo
     public class PolarBear : Mammals
     { 
      private int weight;
-     private bool coldClimates;
+     private bool coldClimates = true;
 
     public PolarBear()
     {
@@ -18,6 +18,10 @@ namespace Zoo
     }
     public int Weight
     {
+            get
+            {
+                return weight;
+            }
         set
         {
             weight = value;
@@ -26,11 +30,11 @@ namespace Zoo
 
     public bool ColdClimates
     {
-        set
-        {
-            coldClimates = value;
-        }
-
+            get
+            {
+                return coldClimates;
+            }
+           
     }
 
 }

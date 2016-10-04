@@ -8,27 +8,35 @@ namespace Zoo
 {
     public class Koala : Mammals
     {
-        private int slides;
-        private bool matesForLife;
+        private string hugs;
+        private string trees;
 
         public Koala()
         {
             base.MeatEaters = false;
             base.Furry = true;
         }
-        public int Slides
+        public string Hugs
         {
+            get
+            {
+                return hugs;
+            }
             set
             {
-                slides = value;
+                hugs = value;
             }
         }
 
-        public bool MatesForLife
+        public string Trees
         {
+            get
+            {
+                return trees;
+            }
             set
             {
-                matesForLife = value;
+                trees = value;
             }
 
         }

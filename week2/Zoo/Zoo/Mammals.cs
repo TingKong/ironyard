@@ -19,6 +19,10 @@ namespace Zoo
 
         public bool MeatEaters
         {
+            get
+            {
+                return meatEaters;
+            }
             set
             {
                 meatEaters = value;
@@ -27,6 +31,10 @@ namespace Zoo
 
         public bool Furry
         {
+            get
+            {
+                return furry;
+            }
             
             set
             {
