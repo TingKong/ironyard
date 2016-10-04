@@ -26,7 +26,10 @@ namespace Zoo
 
         public string Location
         {
-          
+            get
+            {
+                return location;
+            }
 
             set
             {

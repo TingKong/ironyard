@@ -10,10 +10,39 @@ namespace Zoo
     {
         private bool livesInWater;
         private bool gills;
-    }
+    
 
     public Fish()
     {
-        base.numOfLegs = 2;
+        base.NumOfLegs = 2;
+        base.Location = "land/sea";
+    }
+
+        public bool LivesInWater
+        {
+            get
+            {
+                return livesInWater;
+            }
+
+            set
+            {
+                livesInWater = value;
+            }
+        }
+
+        public bool Gills
+        {
+            get
+            {
+                return gills;
+            }
+
+            set
+            {
+                gills = value;
+            }
+        }
+
     }
 }

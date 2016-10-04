@@ -9,21 +9,30 @@ namespace Zoo
     public class Birds : Animals
     {
         private bool flys;
-        private bool nest;
+        private int toes;
 
 
         public Birds()
         {
             base.NumOfLegs = 2;
-            base.Location = "Sky";
+            base.Location = "Land/Sky";
         }
 
         public bool Flys
         {
-            get
+            set
             {
-                return flys;
+               flys = value;
             }
+        }
+
+        public int Toes
+        {
+           set
+            {
+                toes = value;
+            }
+
         }
 
 

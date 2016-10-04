@@ -8,12 +8,33 @@ namespace Zoo
 {
     public class Mammals : Animals
     {
-        private bool warmBlooded;
+        private bool meatEaters;
         private bool furry;
-    }
-
+    
     public Mammals()
     {
-        base.numOfLegs = 2;
+        base.NumOfLegs = 2;
+        base.Location = "land";
     }
+
+        public bool MeatEaters
+        {
+            set
+            {
+                meatEaters = value;
+            }
+        }
+
+        public bool Furry
+        {
+            
+            set
+            {
+                furry = value;
+            }
+
+        }
+
+    }
+
 }
